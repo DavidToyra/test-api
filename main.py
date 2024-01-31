@@ -3,13 +3,13 @@ import time
 
 
 skada_data = {
-    "regnr": "OFY765",
-    "date": "2023-11-01"
+    "regnr": "YXL327",
+    "date": "2023-09-11"
 }
 
 login_data = {
-    "username": "USERNAME",
-    "password": "PASSWORD"
+    "username": USERNAME,
+    "password": PASSWORD
 }
 
 # Logga in och hämta token, userinfo måste skickas som 'data'
@@ -23,7 +23,7 @@ else:
     exit()
 
 # Skicka anrop med registreringsnummer och skadedatum, skickas som query parametrar. Header med "Bearer" och access token måste skickas med för authentication
-response = requests.post("https://sensor-claims-api.azurewebsites.net/skada?regnr="+skada_data["regnr"]+"&date="+skada_data["date"], headers={"Authorization": f"Bearer {token}"})
+response = requests.post("https://sensor-claims-api.azurewebsites.net/icq_cabas?regnr="+skada_data["regnr"]+"&date="+skada_data["date"], headers={"Authorization": f"Bearer {token}"})
 
 if response.status_code == 200:
     response = response.json()
@@ -31,5 +31,3 @@ if response.status_code == 200:
 else:
     print(f"Request failed with code: {response.status_code}")
     exit()
-
-
