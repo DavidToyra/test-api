@@ -4,7 +4,7 @@ import time
 
 skada_data = {
     "regnr": "YXL327",
-    "date": "2023-09-11"
+    "date": "2023-09-10"
 }
 
 login_data = {
